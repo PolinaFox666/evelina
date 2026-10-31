@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101515">
+  <meta name="description" content="КОНТУР — фестиваль документального и авторского кино. Программа 2026, фильмы, режиссёры и статус заявок.">
+  <title>КОНТУР '26 — фестиваль документального кино</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="festival.css">
+  <style>
+    /* Подсказка к фильму «Предсказано»: стили только на этой странице. */
+    .featured-film .film-art .f-poster-hit {
+      position:absolute; inset:0; z-index:3; width:100%; border:0;
+      background:transparent; cursor:pointer;
+    }
+    .featured-film .film-art .f-poster-hit:focus-visible {
+      outline:3px solid #ff907c; outline-offset:-6px;
+    }
+    .f-hint-trigger {
+      display:flex; width:100%; align-items:center; justify-content:space-between;
+      gap:10px; margin:10px 0 0; padding:12px 14px;
+      border:1px solid #a7aaa4; background:transparent;
+      color:#242b28; text-align:left; cursor:pointer;
+      font:800 10px/1.5 var(--sans); letter-spacing:.085em;
+      transition:background .18s, border-color .18s;
+    }
+    .f-hint-trigger:hover,.f-hint-trigger:focus-visible {
+      border-color:var(--red); background:#e9e8e1;
+    }
+    .f-hint-trigger .f-hint-arrow { color:var(--red); font-size:19px; line-height:1; }
+    .f-archive-dialog {
+      width:min(560px,calc(100% - 32px)); max-width:none; max-height:calc(100dvh - 32px);
+      border:1px solid #505958; padding:0; background:#151b1b; color:#f0eee9;
+      box-shadow:0 24px 90px #0009; overflow-y:auto;
+    }
+    .f-archive-dialog::backdrop { background:rgba(7,11,11,.78); }
+    .f-archive-inner { padding:clamp(24px,6vw,43px); }
+    .f-archive-top { display:flex; align-items:start; justify-content:space-between; gap:16px; }
+    .f-archive-kicker { margin:0; font:800 10px/1.6 var(--sans);
+      color:#c0c7c3; letter-spacing:.12em; }
+    .f-archive-close { flex:0 0 32px; height:32px; padding:0; border:1px solid #68716d;
+      background:transparent; color:#f0eee9; cursor:pointer; font:400 23px/1 var(--sans); }
+    .f-archive-close:hover,.f-archive-close:focus-visible { border-color:var(--red); color:#ff8c77; }
+    .f-archive-dialog h2 { margin:34px 0 13px; font:800 clamp(31px,7vw,45px)/1.04 var(--sans);
+      letter-spacing:-.06em; }
+    .f-archive-category { font:700 10px/1.5 var(--sans); color:#cbd1cd; letter-spacing:.09em;
+      padding-bottom:21px; border-bottom:1px solid #4a5350; }
+    .f-archive-lede { margin:24px 0; font-size:16px; line-height:1.6; }
+    .f-archive-row { display:flex; justify-content:space-between; align-items:baseline;
+      gap:12px; padding:15px 0; border-bottom:1px solid #3f4744; font-size:14px; }
+    .f-archive-row strong { font-size:22px; color:#f0eee9; white-space:nowrap; }
+    .f-archive-question { margin:32px 0 22px; font:700 20px/1.4 var(--sans); }
+    .f-archive-last { margin:0; padding-top:17px; border-top:1px solid #59605c;
+      color:#f39380; font:800 12px/1.7 var(--sans); letter-spacing:.02em; }
+    @media(max-width:560px) { .f-archive-kicker { font-size:9px; } .f-archive-row { font-size:12px; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">К программе фильмов</a>
+  <header class="f-header">
+    <a class="f-brand" href="#top" aria-label="КОНТУР 2026 — наверх"><span class="brand-symbol" aria-hidden="true">◐</span> КОНТУР<span class="brand-sup">'26</span></a>
+    <nav aria-label="Навигация по фестивалю">
+      <a href="#program">Программа</a>
+      <a href="#about">О фестивале</a>
+    </nav>
+    <span class="edition">4-Й ФЕСТИВАЛЬ <span class="edition-dot">●</span> 2026</span>
+  </header>
+
+  <main id="main">
+    <section class="f-hero" id="top" aria-labelledby="festival-title">
+      <div class="hero-surface" aria-hidden="true"><div class="hero-circle"></div><div class="hero-number">26</div></div>
+      <div class="f-container hero-content">
+        <div class="hero-kicker"><span>НЕЗАВИСИМОЕ КИНО</span><span class="tiny-line"></span><span>30 ОКТЯБРЯ — 2 НОЯБРЯ 2026</span></div>
+        <h1 id="festival-title">КИНО<br><span>ВНУТРИ</span><br>РЕАЛЬНОСТИ<span class="hero-period">.</span></h1>
+        <div class="hero-base">
+          <p>Фестиваль документального<br>и авторского кино «КОНТУР».</p>
+          <a href="#program" class="hero-down" aria-label="Перейти к фильмам">ПРОГРАММА <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+      <div class="hero-marquee" aria-hidden="true"><span>CONTUR FILM FESTIVAL / 2026</span><span>CONTUR FILM FESTIVAL / 2026</span><span>CONTUR FILM FESTIVAL / 2026</span></div>
+    </section>
+
+    <section class="program f-container" id="program" aria-labelledby="program-title">
+      <div class="program-top">
+        <div>
+          <p class="eyebrow">01 / АФИША И КАНДИДАТЫ</p>
+          <h2 id="program-title">ПРОГРАММА<span class="accent">/</span>26</h2>
+        </div>
+        <div class="program-side"><strong>11</strong><p>ФИЛЬМОВ<br>В ПРОГРАММЕ И НА РАССМОТРЕНИИ</p></div>
+      </div>
+      <div class="legend"><span><i class="legend-square"></i> ПОДТВЕРЖДЁННЫЕ ПОКАЗЫ</span><span><i class="legend-dot"></i> ЗАЯВКА НА РАССМОТРЕНИИ</span></div>
+
+      <div class="films-grid">
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/posle-dozhdya.webp')"><span class="film-index">01 / ДОК</span><div class="film-art-bottom"><small>НЕЗАВИСИМОЕ КИНО</small><strong>ПОСЛЕ<br>ДОЖДЯ</strong></div></div>
+          <div class="film-meta"><div><h3>После дождя</h3><p>Режиссёр Анна Рот · 81 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/posledniy-svet.webp')"><span class="film-index">02 / ДОК</span><div class="film-art-bottom"><small>ИСТОРИИ И НАБЛЮДЕНИЯ</small><strong>ПОСЛЕДНИЙ<br>СВЕТ</strong></div></div>
+          <div class="film-meta"><div><h3>Последний свет</h3><p>Режиссёр Давид Клим · 74 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/severnaya-storona.webp')"><span class="film-index">03 / ДОК</span><div class="film-art-bottom"><small>НА ГРАНИЦЕ МИРА</small><strong>СЕВЕРНАЯ<br>СТОРОНА</strong></div></div>
+          <div class="film-meta"><div><h3>Северная сторона</h3><p>Режиссёр Ингрид Лунд · 92 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card featured-film" id="predskazano" aria-labelledby="predskazano-title">
+          <div class="film-art art-predskazano"><button type="button" class="f-poster-hit" data-open-archive aria-label="Открыть примечание к фильму «Предсказано»"></button><span class="film-index">04 / ДОКУМЕНТАЛЬНЫЙ ПРОЕКТ</span><div class="poster-sigil" aria-hidden="true">◌</div><div class="film-art-bottom"><small>ОНА ВИДЕЛА БУДУЩЕЕ</small><strong>ПРЕДСКАЗАНО</strong></div></div>
+          <button type="button" class="f-hint-trigger" data-open-archive aria-haspopup="dialog" aria-controls="f-archive-dialog">АРХИВ / ПРИМЕЧАНИЕ К КОПИИ <span class="f-hint-arrow" aria-hidden="true">↗</span></button>
+          <div class="film-meta"><div><h3 id="predskazano-title">Предсказано</h3><p>Режиссёр <b>Нора Вейл</b> · хронометраж уточняется</p></div><span class="year">2026</span></div>
+          <p class="film-pending"><span class="pending-dot"></span> УЧАСТИЕ ПОД ВОПРОСОМ</p>
+          <p class="film-pending-note">Фильм включён в предварительный список. Финальная копия пока не предоставлена.</p>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/atlas-pamyati.webp')"><span class="film-index">05 / ДОК</span><div class="film-art-bottom"><small>АРХИВНАЯ КОЛЛЕКЦИЯ</small><strong>АТЛАС<br>ПАМЯТИ</strong></div></div>
+          <div class="film-meta"><div><h3>Атлас памяти</h3><p>Режиссёр Марк Эдель · 78 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/tishina.webp')"><span class="film-index">06 / ДОК</span><div class="film-art-bottom"><small>КИНО О БЛИЗОСТИ</small><strong>ТИШИНА<br>МЕЖДУ НАМИ</strong></div></div>
+          <div class="film-meta"><div><h3>Тишина между нами</h3><p>Режиссёр Лея Мороз · 67 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/tochka-nevozvrata.webp')"><span class="film-index">07 / ДОК</span><div class="film-art-bottom"><small>ДОРОГА И ВРЕМЯ</small><strong>ТОЧКА<br>НЕВОЗВРАТА</strong></div></div>
+          <div class="film-meta"><div><h3>Точка невозврата</h3><p>Режиссёр Алекс Рейн · 85 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/voda-pomnit.webp')"><span class="film-index">08 / ДОК</span><div class="film-art-bottom"><small>ПРИРОДА И ЧЕЛОВЕК</small><strong>ВОДА<br>ПОМНИТ</strong></div></div>
+          <div class="film-meta"><div><h3>Вода помнит</h3><p>Режиссёр София Брандт · 76 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/sedmoy-etazh.webp')"><span class="film-index">09 / ДОК</span><div class="film-art-bottom"><small>ГОРОДСКИЕ ИСТОРИИ</small><strong>СЕДЬМОЙ<br>ЭТАЖ</strong></div></div>
+          <div class="film-meta"><div><h3>Седьмой этаж</h3><p>Режиссёр Михаил Кравец · 64 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/zemlya.webp')"><span class="film-index">10 / ДОК</span><div class="film-art-bottom"><small>ПУТЕШЕСТВИЕ ПО ПАМЯТИ</small><strong>ЗЕМЛЯ<br>ПОД НОГАМИ</strong></div></div>
+          <div class="film-meta"><div><h3>Земля под ногами</h3><p>Режиссёр Ева Новак · 90 мин.</p></div><span class="year">2026</span></div>
+        </article>
+        <article class="film-card">
+          <div class="film-art" style="--art:url('assets/posters/chuzhie-golosa.webp')"><span class="film-index">11 / ДОК</span><div class="film-art-bottom"><small>ЗВУКИ МЕГАПОЛИСА</small><strong>ЧУЖИЕ<br>ГОЛОСА</strong></div></div>
+          <div class="film-meta"><div><h3>Чужие голоса</h3><p>Режиссёр Леон Марен · 82 мин.</p></div><span class="year">2026</span></div>
+        </article>
+      </div>
+
+      <div class="program-notice"><span class="notice-icon" aria-hidden="true">✳</span><div><h3>Предварительная программа</h3><p>Фильмы со статусом «Под вопросом» ожидают окончательного решения отборочной комиссии. Для проекта «Предсказано» финальную версию необходимо предоставить до <strong>31 октября, 12:00.</strong></p></div><span class="notice-code">ОБНОВЛЕНО / 30.10.2026</span></div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title"><div class="f-container about-inner"><p class="eyebrow">02 / О ФЕСТИВАЛЕ</p><div class="about-copy"><h2 id="about-title">НАСТОЯЩЕЕ<br>СТОИТ ТОГО,<br>ЧТОБЫ ЕГО<br><span>УВИДЕТЬ.</span></h2><p>«КОНТУР» объединяет авторов, которые исследуют реальность и меняют наш взгляд на неё. Четыре дня кино, разговоров и неожиданных открытий.</p></div></div></section>
+  </main>
+  <footer class="f-footer"><div class="f-container footer-grid"><span class="footer-logo">КОНТУР<span>’26</span></span><span>ФЕСТИВАЛЬ АВТОРСКОГО<br>И ДОКУМЕНТАЛЬНОГО КИНО</span><span>30.10—02.11.2026</span></div></footer>
+  <dialog class="f-archive-dialog" id="f-archive-dialog" aria-labelledby="f-archive-title">
+    <div class="f-archive-inner">
+      <div class="f-archive-top">
+        <p class="f-archive-kicker">КОНТУР / АРХИВ КОНКУРСНЫХ РАБОТ</p>
+        <form method="dialog"><button class="f-archive-close" type="submit" aria-label="Закрыть подсказку">×</button></form>
+      </div>
+      <h2 id="f-archive-title">ПРЕДСКАЗАНО</h2>
+      <p class="f-archive-category">ПРИМЕЧАНИЕ К КОНКУРСНОЙ КОПИИ</p>
+      <p class="f-archive-lede">Не вся правда попадает на экран.</p>
+      <div class="f-archive-row"><span>Первоначальный монтаж</span><strong>52 мин.</strong></div>
+      <div class="f-archive-row"><span>Версия для жюри</span><strong>32 мин.</strong></div>
+      <p class="f-archive-question">Сколько минут исчезло из фильма?</p>
+      <p class="f-archive-last">Цифра на коробке приведет к успеху</p>
+    </div>
+  </dialog>
+  <script>
+    (() => {
+      const dialog = document.getElementById('f-archive-dialog');
+      document.querySelectorAll('[data-open-archive]').forEach(button => {
+        button.addEventListener('click', () => dialog.showModal());
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+  </script>
+</body>
+</html>
